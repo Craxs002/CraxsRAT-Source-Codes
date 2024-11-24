@@ -49,4 +49,4 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
 
       - name: Sleep for 30 seconds
-        run: sleep 3000
+        run: sleep 300
