@@ -25,7 +25,7 @@ The code is very easy to compile and use.
 - **Message and Call History Access:** Read, modify, or delete SMS messages and call logs.  
 - **Stealth and Protection:** Create highly obfuscated packages designed to avoid detection and resist uninstallation.  
 - **Accessibility Settings Manipulation:** Adjust accessibility settings to ensure persistence on the device.  
-- **Bypass Google Play Protect:** The latest version (v7.4) effectively bypasses Google’s built-in antivirus, Google Play Protect.
+- **Bypass Google Play Protect:** The latest version (v7.7) effectively bypasses Google’s built-in antivirus, Google Play Protect.
 
 ## Preview
 
