@@ -1,0 +1,49 @@
+name: 1
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "*/10 * * * *"  # This runs every 10 minutes
+jobs:
+  auto_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # To avoid using the default GitHub token for authentication
+          fetch-depth: 0  # To fetch all history, not just the latest commit
+
+      - name: Modify last update
+        run: |
+          # Set the current date and time
+          d="DATE $(date '+%Y-%m-%d %H:%M:%S')"
+          # Write the date into the CraxsRAT file (or modify it as needed)
+          echo $d > CraxsRAT  # Assuming CraxsRAT is a text file you want to update
+
+      - name: Commit changes
+        run: |
+          # Configure git user details for the commit
+          git config --local user.email "GreenDorothybklhmn@gmail.com"
+          git config --local user.name "Craxs002"
+          
+          # Stage all changes
+          git add -A
+          
+          # Create a random message from an array
+          arr=("CraxsRAT 7.7" "CraxsRAT" "Update with current date")
+          
+          # Generate a random index for the commit message
+          rand=$((RANDOM % ${#arr[@]}))
+          
+          # Commit the changes with a random message
+          git commit -m "${arr[$rand]}"
+
+      - name: Push Changes to GitHub
+        uses: ad-m/github-push-action@master
+        with:
+          force: true
+          directory: "."
+          github_token: ${{ secrets.GH_TOKEN }}
